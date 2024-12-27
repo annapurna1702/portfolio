@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annapurna Padmanabhan - Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Card hover effect */
+        .card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            background-color: rgb(37, 37, 46);
+            color: azure;
+            height:500px;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(25, 1, 54, 0.2);
+        }
+
+        /* Animation for appearing elements */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .fade-in.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Profile picture hover effect */
+        .profile-picture {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .profile-picture:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        .card-img-top{
+            
+            height:300px;
+        }
+       
+    </style>
+</head>
+<body>
+    <header class="bg-dark text-white text-center py-4 fade-in">
+        <h1 style="color: rgb(191, 220, 246);">Annapurna Padmanabhan</h1>
+        <p>Aspiring Professional | NLP | Generative AI | Data Science | Machine Learning & Deep Learning</p>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top fade-in">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#profile">Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#achievements">Achievements</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                    <li class=""nav-item><a class="nav-link" href="#resume">Resume</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="profile" class="container my-5 text-center fade-in">
+        <h2 class="text-center" style="color:rgb(3, 3, 77)">Profile</h2>
+        <div class="row align-items-center">
+            <div class="col-md-4">
+                <img src="pp.jpg" alt="Profile Picture" class="rounded-circle img-fluid profile-picture" style="max-width: 200px;">
+            </div>
+            <div class="col-md-8">
+                <p>An aspiring professional with expertise in NLP, Generative AI, Deep Learning, MEAN stack development, cloud technologies, and object-oriented programming (OOP). Keen to tackle complex coding challenges and develop efficient, reliable solutions, I thrive in fast-paced, diverse environments and consistently deliver high-quality work.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="bg-light py-5 fade-in">
+        <div class="container">
+            <h2 class="text-center" style="color:rgb(3, 3, 77)">Skills</h2>
+            <br>
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>Technical Skills</h4>
+                    <ul>
+                        <li>Machine Learning</li>
+                        <li>Generative AI</li>
+                        <li>Deep Learning</li>
+                        <li>NoSQL</li>
+                        <li>Python</li>
+                        <li>R Programming</li>
+                        <li>NLP</li>
+                        <li>Power BI</li>
+                        <li>HTML and CSS</li>
+                        <li>PHP</li>
+                        <li>SQL</li>
+                        <li>Databricks</li>
+                        <li>MongoDB</li>
+                        <li>Angular.js</li>
+                        <li>Django</li>
+                        <li>Android App development</li>
+                        <li>TypeScript</li>
+                        <li>JavaScript</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h4>Soft Skills</h4>
+                    <ul>
+                        <li>Project Management</li>
+                        <li>Team Leading Skills</li>
+                        <li>Problem-Solving</li>
+                        <li>Time Management</li>
+                        <li>Presentation Skills</li>
+                        <li>Writing Skill</li>
+                        <li>Communication Skills</li>
+                        <li>Interpersonal Skills</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="container my-5 fade-in">
+        <h2 class="text-center" style="color:rgb(3, 3, 77)">Projects</h2>
+        <br>
+        <div class="row g-4" id="project-cards">
+            <div class="col-md-3 fade-in">
+                <div class="card">
+                    <img src="pic.jpg" class="card-img-top" alt="Fabric Sense">
+                    <div class="card-body">
+                        <h5 class="card-title">Fabric Sense</h5>
+                        <p class="card-text">An award-winning application aimed at automating thread counting for quality assurance in the handloom industry. Leveraging image detection techniques, the project enhances production efficiency and reduces manual effort.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 fade-in">
+                <div class="card">
+                    <img src="https://i.postimg.cc/wMmKLJdz/Untitled-design.jpg" class="card-img-top" alt="Fabric Sense">
+                    <div class="card-body">
+                        <h5 class="card-title">Automatic Classification of Social Media Data Containing Medication Information</h5>
+                        <p class="card-text">Implemented an NLP-based solution to classify social media data discussing medication. This project contributes to better understanding public discourse around healthcare.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 fade-in">
+                <div class="card">
+                    <img src="ai.jpg" class="card-img-top" alt="Fabric Sense">
+                    <div class="card-body">
+                        <h5 class="card-title">Image Generator</h5>
+                        <p class="card-text">Fine-tuned a stable diffusion model to generate images from textual prompts. This Generative AI project explored creative uses of AI for digital art and content generation.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 fade-in">
+                <div class="card">
+                    <img src="dashboard.png" class="card-img-top" alt="Power BI Dashboard">
+                    <div class="card-body">
+                        <h5 class="card-title">Power BI Dashboard</h5>
+                        <p class="card-text">Comprehensive analysis of shopping mall purchase data for insights into customer behavior and sales trends.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 fade-in">
+                <div class="card">
+                    <img src="ipc.jpg" class="card-img-top" alt="Fabric Sense">
+                    <div class="card-body">
+                        <h5 class="card-title">IPC Section Identification</h5>
+                        <p class="card-text">An NLP-based project that employs a fine-tuned legal BERT model to identify legal sections from textual descriptions of cases, aiding in legal research and documentation.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 fade-in">
+                <div class="card">
+                    <img src="chatbot.jpg" class="card-img-top" alt="Fabric Sense">
+                    <div class="card-body">
+                        <h5 class="card-title">Chatbot Service</h5>
+                        <p class="card-text">Developed a chatbot that integrates a RAG model and fine-tuned Stable Diffusion model to provide both textual and image-based responses, with a focus on assisting users in cooking Indian cuisine.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 fade-in">
+                <div class="card">
+                    <img src="music.jpg" class="card-img-top" alt="Fabric Sense">
+                    <div class="card-body">
+                        <h5 class="card-title">Music Generator</h5>
+                        <p class="card-text">Built a Streamlit app that uses Meta’s Audiocraft to generate music from textual prompts. The project combines AI and creativity to produce customized soundtracks.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 fade-in">
+                <div class="card">
+                    <img src="sa.png" class="card-img-top" alt="Fabric Sense">
+                    <div class="card-body">
+                        <h5 class="card-title">Sentiment Analysis Model</h5>
+                        <p class="card-text">Designed an NLP-based model to analyze the sentiment behind textual reviews, helping businesses understand customer opinions.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 fade-in">
+                <div class="card">
+                    <img src="tts.jpg" class="card-img-top" alt="Fabric Sense">
+                    <div class="card-body">
+                        <h5 class="card-title">Text-to-Speech Generator</h5>
+                        <p class="card-text">Fine-tuned Nvidia’s Tacotron 2 TTS Model to create a system that converts text into natural-sounding speech, enhancing accessibility and user interaction.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 fade-in">
+                <div class="card">
+                    <img src="shop.jpg" class="card-img-top" alt="Fabric Sense">
+                    <div class="card-body">
+                        <h5 class="card-title">Model to Predict Customers’ Purchase Behavior</h5>
+                        <p class="card-text">Implemented a clustering algorithm using K-means to group retail customers based on purchase history, providing valuable insights for targeted marketing.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 fade-in">
+                <div class="card">
+                    <img src="auemo.jpg" class="card-img-top" alt="Fabric Sense">
+                    <div class="card-body">
+                        <h5 class="card-title">Speech Emotion Detection</h5>
+                        <p class="card-text">Conducted a comparison of various machine learning models to detect emotions from speech, analyzing performance metrics to identify optimal solutions.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 fade-in">
+                <div class="card">
+                    <img src="emo.jpg" class="card-img-top" alt="Video Emotion Recognition">
+                    <div class="card-body">
+                        <h5 class="card-title">Video-Emotion Recognition System</h5>
+                        <p class="card-text">An application using ML models to detect emotions from video frames and audio.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-3 fade-in">
+                <div class="card">
+                    <img src="ip.jpg" class="card-img-top" alt="Fabric Sense">
+                    <div class="card-body">
+                        <h5 class="card-title">RAG Model for Intellectual Property Laws</h5>
+                        <p class="card-text">Built a RAG model to handle question-answering tasks related to intellectual property laws, improving accessibility to legal information.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-3 fade-in">
+                <div class="card">
+                    <img src="news.jpg" class="card-img-top" alt="Fabric Sense">
+                    <div class="card-body">
+                        <h5 class="card-title">News@Tip – News Portal</h5>
+                        <p class="card-text">Developed a MEAN stack-based news portal for delivering real-time updates, providing users with liberty to post local news, and seamless and dynamic browsing experience.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            
+            
+            
+            <div class="col-md-3 fade-in">
+                <div class="card">
+                    <img src="sc2.jpg" class="card-img-top" alt="SMART City">
+                    <div class="card-body">
+                        <h5 class="card-title">SMART City</h5>
+                        <p class="card-text">Created a city-wide facility, primarily waste management system using IoT and Django framework. This solution included real-time waste tracking, database integration, and an interactive user interface designed with HTML, CSS, and JavaScript.</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    <section id="achievements" class="bg-light py-5 fade-in">
+        <div class="container">
+            <h2 class="text-center" style="color:rgb(3, 3, 77)">Achievements</h2>
+            <br>
+            <ul>
+                <li><strong>Winner of Allianz Award for Best Digital Innovation for Social Impact 2024 </strong> </li>
+                <li><strong>Positioned amongst the 17 top scorers in English (0.01% of students) in the CBSE 10th standard Board 
+                    Examination </strong> </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="education" class="container my-5 fade-in">
+        <div class="container">
+            <h2 class="text-center" style="color:rgb(3, 3, 77)">Education</h2>
+            <br>
+            <ul>
+                <li><strong>MSc Computer Science</strong> (2023-Present), Kerala University of Digital Sciences, Innovation and Technology</li>
+                <li><strong>Bachelors in Computer Application</strong> (2020-2023), Christ Nagar College, Kerala
+                <ul><li>Scored a CGPA of 8.34</li></ul></li>
+            </ul>
+        </div>
+    </section>
+    <section id="resume" class="bg-light py-5 fade-in">
+        <div class="container">
+            <h2 class="text-center" style="color:rgb(3, 3, 77)">Resume</h2>
+            <br>
+            <p class="text-center">You can view detailed resume from here:</p>
+            <p class="text-center"><a href="https://drive.google.com/file/d/1htAGIOnXVBuzVGhXbJRoIuneCAmLBdu5/view?usp=sharing">View Resume</a></p>
+        </div>
+    </section>
+
+    <section id="contact" class="container my-5 fade-in">
+        <h2 class="text-center" style="color:rgb(3, 3, 86)">Contact</h2>
+        <br>
+        <p class="text-center">Email: <a href="mailto:annapurnapadmaprema@gmail.com">annapurnapadmaprema@gmail.com</a></p>
+        <p class="text-center">LinkedIn: <a href="https://www.linkedin.com/in/annapurnapadmanabhan">www.linkedin.com/in/annapurnapadmanabhan</a></p>
+        <p class="text-center">GitHub: <a href="https://github.com/annapurna1702?tab=repositories">annapurna1702</a></p>
+        <p class="text-center">HuggingFace: <a href="https://huggingface.co/annapurnapadmaprema-ji">annapurnapadmaprema-ji</a></p>
+    </section>
+    
+
+    <footer class="bg-dark text-white text-center py-3 fade-in">
+        <p style="color:rgb(168, 188, 230)">&copy; 2024 Annapurna Padmanabhan. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Animation on scroll
+        document.addEventListener("DOMContentLoaded", () => {
+            const elements = document.querySelectorAll(".fade-in");
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                    }
+                });
+            });
+
+            elements.forEach(element => observer.observe(element));
+        });
+    </script>
+</body>
+</html>
