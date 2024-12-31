@@ -53,7 +53,26 @@
             
             height:300px;
         }
-       
+       .technical-skills {
+            transform: translateX(-100%);
+            transition: transform 1s ease-out;
+        }
+
+        .soft-skills {
+            transform: translateX(100%);
+            transition: transform 1s ease-out;
+        }
+        .technical-skills.visible {
+            transform: translateX(0);
+        }
+
+        .soft-skills.visible {
+            transform: translateX(0);
+        }
+        .skills-container {
+            display: flex;
+            justify-content: space-between;
+        }
     </style>
 </head>
 <body>
@@ -95,13 +114,13 @@
     </section>
 
     <section id="skills" class="bg-light py-5 fade-in">
-        <div class="container">
+        <div class="skills-container">
             <h2 class="text-center" style="color:rgb(3, 3, 77)">Skills</h2>
             <br>
             <div class="row">
                 <div class="col-md-6">
-                    <h4>Technical Skills</h4>
-                    <ul>
+                    <h4 class="technical-skills">Technical Skills</h4>
+                    <ul class="technical-skills">
                         <li>Machine Learning</li>
                         <li>Generative AI</li>
                         <li>Deep Learning</li>
@@ -123,8 +142,8 @@
                     </ul>
                 </div>
                 <div class="col-md-6">
-                    <h4>Soft Skills</h4>
-                    <ul>
+                    <h4 class="soft-skills">Soft Skills</h4>
+                    <ul class="soft-skills">
                         <li>Project Management</li>
                         <li>Team Leading Skills</li>
                         <li>Problem-Solving</li>
@@ -377,18 +396,30 @@
 
             elements.forEach(element => observer.observe(element));
         });
-        const scrollHandler = () => {
+         const scrollHandler = () => {
             document.querySelectorAll('section').forEach(section => {
                 const rect = section.getBoundingClientRect();
                 if (rect.top >= 0 && rect.bottom <= window.innerHeight + 100) {
                     section.classList.add('visible');
                 }
             });
+
+            const skillsContainer = document.querySelector('#skills .skills-container');
+            const skillsRect = skillsContainer.getBoundingClientRect();
+
+            if (skillsRect.top >= 0 && skillsRect.bottom <= window.innerHeight + 100) {
+                document.querySelector('.technical-skills').classList.add('visible');
+                document.querySelector('.soft-skills').classList.add('visible');
+            }
         };
 
         const adjustSpeed = (speed) => {
             document.querySelectorAll('section').forEach(section => {
                 section.style.transition = `opacity ${speed}s ease-out, transform ${speed}s ease-out`;
+            });
+
+            document.querySelectorAll('.technical-skills, .soft-skills').forEach(skillList => {
+                skillList.style.transition = `transform ${speed}s ease-out`;
             });
         };
 
