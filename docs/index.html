@@ -53,26 +53,8 @@
             
             height:300px;
         }
-       .technical-skills {
-            transform: translateX(-100%);
-            transition: transform 1s ease-out;
-        }
-
-        .soft-skills {
-            transform: translateX(100%);
-            transition: transform 1s ease-out;
-        }
-        .technical-skills.visible {
-            transform: translateX(0);
-        }
-
-        .soft-skills.visible {
-            transform: translateX(0);
-        }
-        .skills-container {
-            display: flex;
-            justify-content: space-between;
-        }
+       
+        
     </style>
 </head>
 <body>
@@ -119,8 +101,8 @@
             <br>
             <div class="row">
                 <div class="col-md-6">
-                    <h4 class="technical-skills">Technical Skills</h4>
-                    <ul class="technical-skills">
+                    <h4>Technical Skills</h4>
+                    <ul>
                         <li>Machine Learning</li>
                         <li>Generative AI</li>
                         <li>Deep Learning</li>
@@ -142,8 +124,8 @@
                     </ul>
                 </div>
                 <div class="col-md-6">
-                    <h4 class="soft-skills">Soft Skills</h4>
-                    <ul class="soft-skills">
+                    <h4>Soft Skills</h4>
+                    <ul>
                         <li>Project Management</li>
                         <li>Team Leading Skills</li>
                         <li>Problem-Solving</li>
@@ -404,23 +386,13 @@
                 }
             });
 
-            const skillsContainer = document.querySelector('#skills .skills-container');
-            const skillsRect = skillsContainer.getBoundingClientRect();
-
-            if (skillsRect.top >= 0 && skillsRect.bottom <= window.innerHeight + 100) {
-                document.querySelector('.technical-skills').classList.add('visible');
-                document.querySelector('.soft-skills').classList.add('visible');
-            }
-        };
-
+           
         const adjustSpeed = (speed) => {
             document.querySelectorAll('section').forEach(section => {
                 section.style.transition = `opacity ${speed}s ease-out, transform ${speed}s ease-out`;
             });
 
-            document.querySelectorAll('.technical-skills, .soft-skills').forEach(skillList => {
-                skillList.style.transition = `transform ${speed}s ease-out`;
-            });
+           
         };
 
         adjustSpeed(2); 
