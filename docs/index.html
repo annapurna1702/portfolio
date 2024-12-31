@@ -20,6 +20,17 @@
         }
 
         /* Animation for appearing elements */
+        section {
+            padding: 60px 0;
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
