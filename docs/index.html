@@ -377,14 +377,24 @@
 
             elements.forEach(element => observer.observe(element));
         });
-        document.addEventListener('scroll', () => {
+        const scrollHandler = () => {
             document.querySelectorAll('section').forEach(section => {
                 const rect = section.getBoundingClientRect();
                 if (rect.top >= 0 && rect.bottom <= window.innerHeight + 100) {
                     section.classList.add('visible');
                 }
             });
-        });
+        };
+
+        const adjustSpeed = (speed) => {
+            document.querySelectorAll('section').forEach(section => {
+                section.style.transition = `opacity ${speed}s ease-out, transform ${speed}s ease-out`;
+            });
+        };
+
+        adjustSpeed(2); 
+
+        document.addEventListener('scroll', scrollHandler);
     </script>
 </body>
 </html>
