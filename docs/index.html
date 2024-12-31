@@ -21,7 +21,7 @@
 
         /* Animation for appearing elements */
         section {
-            padding: 60px 0;
+            
             opacity: 0;
             transform: translateX(-100px);
             transition: opacity 1s ease-out, transform 1s ease-out;
@@ -376,6 +376,14 @@
             });
 
             elements.forEach(element => observer.observe(element));
+        });
+        document.addEventListener('scroll', () => {
+            document.querySelectorAll('section').forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top >= 0 && rect.bottom <= window.innerHeight + 100) {
+                    section.classList.add('visible');
+                }
+            });
         });
     </script>
 </body>
