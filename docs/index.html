@@ -4,8 +4,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-/* Layout: a full-bleed 3D archipelago. The camera flies between islands; a floating
-   card on the right (bottom on phones) carries the words for whatever is in view. */
+/*Layout: a full-bleed 3D archipelago. The camera flies between islands; a floating
+   card on the right (bottom on phones) carries the words for whatever is in view.  */
 :root{
   --ink:#1c2133; --paper:#fbfaf7; --muted:#5a6177; --line:rgba(28,33,51,.14);
   --accent:#3b3fb6; --accent2:#e48a26; --night:0;
@@ -17,7 +17,7 @@
   --ink:#e8ecf8; --paper:#131a32; --muted:#9ba4bf; --line:rgba(232,236,248,.14);
   --accent:#a4abff; --accent2:#f2a654; --night:1; color-scheme:dark}}
 :root[data-theme="dark"]{
-  --ink:#e8ecf8; --paper:#131a32; --muted:#9ba4bf;  --line:rgba(232,236,248,.14);
+  --ink:#e8ecf8; --paper:#131a32; --muted:#9ba4bf; --line:rgba(232,236,248,.14);
   --accent:#a4abff; --accent2:#f2a654; --night:1; color-scheme:dark}
 html{height:100%;box-sizing:border-box}
 *,*::before,*::after{box-sizing:border-box}
@@ -108,7 +108,7 @@ canvas#world.paint{cursor:crosshair}
 
 <div class="app">
   <header>
-    <div class="logo">AP<span>.</span></div>
+    <div class="logo">APP<span>.</span></div>
     <nav class="chips" id="chips" aria-label="Islands"></nav>
     <button class="tbtn" id="tbtn" aria-label="Switch day or night">☾ night</button>
     <div class="prog" id="prog"></div>
@@ -132,7 +132,7 @@ canvas#world.paint{cursor:crosshair}
 (()=>{
 if(!window.THREE){document.getElementById('loading').textContent='The 3D world could not load. Check your connection and reload.';return}
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-const RESUME='https://drive.google.com/file/d/1Mjbum1E1FWVWy64pvCSYKWuMwulkKLsQ/view?usp=sharing';
+const RESUME='https://drive.google.com/file/d/1RtOeIq70ZEwKxYEucna9JXpeIfDWmD4u/view?usp=sharing';
 const EMAIL='annapurnapadmaprema@gmail.com';
 /* Your photo: set PHOTO to an image file published next to this page (e.g. 'photo.jpg') or a data: URI. Empty shows your initials. */
 const PHOTO='pp.jpg';
@@ -140,6 +140,7 @@ const V=(x=0,y=0,z=0)=>new THREE.Vector3(x,y,z);
 
 /* ================= content ================= */
 const P=[
+ ['MyJarvis','Agentic AI · LangGraph','An agentic AI orchestrator built with LangGraph. One voice command calls the right agent for any personal need: travel plans, coding, teaching, web search or playing music.','jarvis'],
  ['Robotic Interview Model','Agentic AI · LangChain','End-to-end AI interviewer with facial recognition, liveness monitoring and answer scoring at 0.78 cosine similarity.','robot'],
  ['Fabric Sense','Computer Vision','Quality checks for handloom fabric through image detection. Won the Allianz award for Best Digital Innovation.','cloth'],
  ['Medication Classification','NLP','A classifier for medication talk in healthcare social media posts.','pill'],
@@ -147,6 +148,7 @@ const P=[
  ['Power BI Dashboard','Data Analytics','Mall purchase analysis and customer insights.','bars'],
  ['IPC Section ID','Legal NLP · BERT','A BERT model that identifies Indian Penal Code sections from case text.','scales'],
  ['Chatbot Service','RAG · Diffusion','A RAG chatbot for Indian cuisine that also draws the dishes with Stable Diffusion.','chat'],
+ ['Music Player App','Mobile · Flutter','A Flutter app for playing your downloaded music.','player'],
  ['Music Generator','Generative Audio','Meta Audiocraft generating soundtracks from a text prompt.','eq'],
  ['Sentiment Analysis','NLP','Sentiment analysis over customer reviews at scale.','lines'],
  ['Text-to-Speech','Speech · TTS','NVIDIA Tacotron 2 for natural speech synthesis.','wave'],
@@ -464,6 +466,32 @@ function exhibitObj(type){
      const c1=cap(Wt,LB,.26,.72),c2=cap(Wt,DB,.22,.6);c1.position.set(-.35,1.7,0);c2.position.set(.5,1.35,.25);
      const tabs=[[-.15,.92,.5,Wt],[.72,.92,-.35,LB]].map(([x2,y,z,m])=>{const q=grp(x2,y,z);add(cyl(.3,.3,.12,48),m,0,0,0,q);add(new THREE.BoxGeometry(.48,.02,.03),Ph(0xd8dce6),0,.062,0,q);return q});
      up=(t,h)=>{const sp=h?2:1;c1.rotation.set(.9+Math.sin(t*.7)*.2,t*.5*sp,.3);c2.rotation.set(-.6,-t*.6*sp,-.5+Math.sin(t)*.2);c1.position.y=1.7+Math.sin(t*1.4)*.12;c2.position.y=1.35+Math.sin(t*1.4+1.5)*.1;tabs.forEach((tb,k)=>{tb.rotation.y=t*.4*(k?1:-1);tb.rotation.x=.25})};break}
+   case'jarvis':{const core=grp(0,2);add(sph(.34),glowM(0x46c8ff,1.4),0,0,0,core);
+     const r1=add(new THREE.TorusGeometry(.55,.03,12,64),glowM(0x9fe8ff,1),0,0,0,core),r2=add(new THREE.TorusGeometry(.7,.02,12,64),gold,0,0,0,core);
+     add(cyl(.32,.4,.12,40),D,0,.06);add(cyl(.04,.04,.75,12),D,0,.45);const mic=add(new THREE.CapsuleGeometry(.11,.16,8,24),Ph(0xc9ced8,{metalness:.85,roughness:.3}),0,.92);
+     const waves=[0,1,2].map(()=>{const w=add(new THREE.TorusGeometry(.18,.012,8,40),new THREE.MeshBasicMaterial({color:0x46c8ff,transparent:true}),0,1.1);w.rotation.x=Math.PI/2;w.castShadow=false;return w});
+     const icons=['✈','</>','✎','⌕','♪'],cols=[0xe48a26,0x7a5cc7,0x3fae7a,0x3b3fb6,0xd9435b];
+     const sats=icons.map((ic,k)=>{const q=grp(0,0,0,core);add(sph(.13),Ph(cols[k],{emissive:cols[k],emissiveIntensity:.5}),0,0,0,q);const lb=label(ic,{size:.28,px:40,font:'IBM Plex Mono'});lb.position.y=.27;q.add(lb);
+       const ln=new THREE.Line(new THREE.BufferGeometry().setFromPoints([V(),V(1,0,0)]),new THREE.LineBasicMaterial({color:cols[k],transparent:true,opacity:.5}));core.add(ln);return{q,ln,a:k/5*Math.PI*2,k}});
+     const pulse=add(sph(.05),new THREE.MeshBasicMaterial({color:0xffffff}),0,1.1);
+     up=(t,h)=>{const sp=h?1.8:1;r1.rotation.set(t*.8*sp,t*.5,0);r2.rotation.set(Math.PI/2,t*.4*sp,t*.3);core.position.y=2+Math.sin(t*1.2)*.06;
+       sats.forEach(o=>{const a=o.a+t*.5*sp,p=V(Math.cos(a)*1.05,Math.sin(a*2+o.k)*.22,Math.sin(a)*1.05);o.q.position.copy(p);o.ln.geometry.setFromPoints([V(),p])});
+       waves.forEach((w,k)=>{const u=((t*.6*sp)+k/3)%1;w.position.y=1.1+u*.55;w.scale.setScalar(1+u*1.6);w.material.opacity=1-u});
+       const act=Math.floor(t*.5)%5,u2=(t*.5)%1,s0=sats[act];pulse.position.copy(u2<.5?V(0,1.1+u2*1.8,0):V(0,2,0).add(s0.q.position.clone().multiplyScalar((u2-.5)*2)))};break}
+   case'player':{const c=document.createElement('canvas');c.width=180;c.height=360;const x=c.getContext('2d');x.fillStyle='#0d1626';x.fillRect(0,0,180,360);
+     const gr=x.createLinearGradient(20,40,160,180);gr.addColorStop(0,'#54c5f8');gr.addColorStop(1,'#7a5cc7');x.fillStyle=gr;x.beginPath();x.roundRect(22,40,136,136,14);x.fill();
+     x.fillStyle='rgba(255,255,255,.85)';x.font='bold 54px Georgia';x.textAlign='center';x.fillText('♪',90,128);
+     x.fillStyle='#e9f2ff';x.font='600 15px sans-serif';x.fillText('Downloaded · Track 07',90,206);x.fillStyle='#8fa3c0';x.font='12px sans-serif';x.fillText('Offline library',90,226);
+     x.fillStyle='#2a3a55';x.fillRect(24,252,132,4);x.fillStyle='#54c5f8';x.fillRect(24,252,78,4);x.beginPath();x.arc(102,254,6,0,7);x.fill();
+     x.fillStyle='#54c5f8';x.beginPath();x.arc(90,300,22,0,7);x.fill();x.fillStyle='#0d1626';x.beginPath();x.moveTo(84,289);x.lineTo(84,311);x.lineTo(101,300);x.closePath();x.fill();
+     x.fillStyle='#8fa3c0';[[45,300],[135,300]].forEach(([px,py],k)=>{x.beginPath();k?(x.moveTo(px-6,py-8),x.lineTo(px+4,py),x.lineTo(px-6,py+8)):(x.moveTo(px+6,py-8),x.lineTo(px-4,py),x.lineTo(px+6,py+8));x.fill()});
+     const st=new THREE.CanvasTexture(c);st.colorSpace=THREE.SRGBColorSpace;st.anisotropy=8;
+     const ph=grp(-.35,1.55);add(rbox(.82,1.6,.09,.1),D,0,0,0,ph);const scr=add(new THREE.PlaneGeometry(.74,1.48),new THREE.MeshStandardMaterial({map:st,emissiveMap:st,emissive:0xffffff,emissiveIntensity:.55,roughness:.25}),0,0,.05,ph);scr.castShadow=false;
+     const stand=add(rbox(.5,.08,.4,.03),D,-.35,.68,-.05);
+     const disc=grp(.75,1.55,-.1);const dm=add(cyl(.5,.5,.03,64),Ph(0x111318,{roughness:.2,clearcoat:1}),0,0,0,disc);dm.rotation.x=Math.PI/2;
+     const lab=add(cyl(.17,.17,.035,40),Ph(0x54c5f8),0,0,0,disc);lab.rotation.x=Math.PI/2;
+     const nt=grp(.2,2.6);const hd=add(sph(.12),Ph(0x54c5f8,{emissive:0x54c5f8,emissiveIntensity:.4}),0,0,0,nt);hd.scale.set(1.25,.85,.85);add(cyl(.02,.02,.45,10),Ph(0x54c5f8),.14,.22,0,nt);
+     up=(t,h)=>{disc.rotation.z=-t*(h?4:1.6);ph.rotation.y=Math.sin(t*.7)*.25;nt.position.y=2.6+Math.sin(t*1.8)*.15;nt.position.x=.2+Math.sin(t*.9)*.15;nt.rotation.z=Math.sin(t*2)*.2};break}
    case'gem':{const m=add(new THREE.IcosahedronGeometry(.85,0),new THREE.MeshPhysicalMaterial({color:0x9b7cf0,roughness:.05,transparent:true,opacity:.85,iridescence:1,iridescenceIOR:1.4,clearcoat:1,flatShading:true,emissive:0x5a3cc7,emissiveIntensity:.25}),0,1.75);
      const r=add(new THREE.TorusGeometry(1.3,.035,16,96),gold,0,1.75),r2=add(new THREE.TorusGeometry(1.05,.025,16,96),B,0,1.75);
      up=(t,h)=>{m.rotation.set(t*.5,t*(h?2:.8),0);r.rotation.set(Math.PI/2+Math.sin(t)*.4,t*.5,0);r2.rotation.set(Math.sin(t*.7)*.8,-t*.6,Math.PI/3);m.scale.setScalar(1+Math.sin(t*3)*.05)};break}
@@ -1033,7 +1061,7 @@ const tag=a=>`<div class="tags">${a.map(s=>`<span class="tag">${s}</span>`).join
 const T={
  hello:()=>`<div class="hi"><div class="av">${PHOTO?`<img src="${PHOTO}" alt="Annapurna Padmanabhan" onerror="this.replaceWith('AP')">`:'AP'}</div><div><p class="eyebrow" style="margin:0 0 4px">Welcome to the islands</p><h2 style="margin:0">Annapurna Padmanabhan</h2></div></div>
   <p><strong>NLP, Generative AI and ML engineer</strong> from Kerala. I build systems that think, from robotic interviewers to legal RAG models. I also paint and make music, so each part of my work has its own island here.</p>
-  <div class="stats"><div><b>2nd</b><span>University rank</span></div><div><b>8.58</b><span>MSc CGPA</span></div><div><b>19</b><span>Projects</span></div></div>
+  <div class="stats"><div><b>2nd</b><span>University rank</span></div><div><b>8.58</b><span>MSc CGPA</span></div><div><b>${P.length}</b><span>Projects</span></div></div>
   <div class="btns"><button class="btn" data-go="next">Start the tour →</button><a class="btn ghost" href="${RESUME}" target="_blank" rel="noopener">Resume</a></div>
   <p class="note">Double-click anywhere in the world to return to this view.</p>`,
  skills:()=>`<p class="eyebrow">Skills · the neural grove</p><h2>What I build with</h2>
